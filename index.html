@@ -180,6 +180,10 @@
       function getInstructions(data, coordinates) {
         // Target the sidebar to add the instructions
         const directions = document.getElementById('directions');
+        const output = coordinates.split(';').map(pair => {
+          const [lng, lat] = pair.split(',').map(Number);
+          return [lng, lat];
+        });
         let tripDirections = '';
         // Output the instructions for each step of each leg in the response object
         for (const leg of data.legs) {
@@ -192,7 +196,8 @@
           data.duration / 60
         )} min.</strong></p>
         <ol>${tripDirections}</ol>
-        <p>${coordinates}</p>`;
+        <p><strong>Coordinates:</strong></p>
+        <p>${output}</p>`;
       }
 
       // Draw the Map Matching route as a new layer on the map
