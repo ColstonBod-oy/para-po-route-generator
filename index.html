@@ -39,6 +39,15 @@
         center: [-122.42136449, 37.80176523], // Specify the starting position
         zoom: 14.5 // Specify the starting zoom
       });
+      
+      // Check for any loading errors
+      map.on('load', () => {
+        console.log('Map loaded successfully');
+      });
+
+      map.on('error', (e) => {
+        console.error('Map error:', e.error);
+      });
     </script>
   </body>
 </html>
