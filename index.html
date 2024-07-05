@@ -183,7 +183,7 @@
         // Format the coordinates
         const coords = coordinates.split(';').map(pair => {
           const [lng, lat] = pair.split(',').map(Number);
-          return `[${lng}, ${lat}]`;
+          return `  [${lng}, ${lat}]`;
         }).join(',\n');
         const formattedCoords = `[\n${coords}\n]`;
         let tripDirections = '';
