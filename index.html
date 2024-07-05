@@ -190,7 +190,9 @@
         }
         directions.innerHTML = `<p><strong>Trip duration: ${Math.floor(
           data.duration / 60
-        )} min.</strong></p><ol>${tripDirections}</ol>`;
+        )} min.</strong></p>
+        <ol>${tripDirections}</ol>
+        <p>${data.features}</p>`;
       }
 
       // Draw the Map Matching route as a new layer on the map
