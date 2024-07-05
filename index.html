@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Get started with the Map Matching API</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    {/* Import Mapbox GL JS */}
+    <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v3.3.0/mapbox-gl.js"></script>
+    <link
+      href="https://api.tiles.mapbox.com/mapbox-gl-js/v3.3.0/mapbox-gl.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      #map {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+      }
+    </style>
+  </head>
+
+  <body>
+    {/* Create a container for the map */}
+    <div id="map"></div>
+
+    <script>
+      // Add your Mapbox access token
+      mapboxgl.accessToken = ' <UserAccessToken /> ';
+      const map = new mapboxgl.Map({
+        container: 'map', // Specify the container ID
+        style:
+          'mapbox://styles/mapbox/streets-v12', // Specify which map style to use
+        center: [-122.42136449, 37.80176523], // Specify the starting position
+        zoom: 14.5 // Specify the starting zoom
+      });
+    </script>
+  </body>
+</html>
