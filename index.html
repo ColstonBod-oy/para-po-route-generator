@@ -174,10 +174,10 @@
         const coords = response.matchings[0].geometry;
         // Draw the route on the map
         addRoute(coords);
-        getInstructions(response.matchings[0]);
+        getInstructions(response.matchings[0], coordinates);
       }
 
-      function getInstructions(data) {
+      function getInstructions(data, coordinates) {
         // Target the sidebar to add the instructions
         const directions = document.getElementById('directions');
         let tripDirections = '';
@@ -192,7 +192,7 @@
           data.duration / 60
         )} min.</strong></p>
         <ol>${tripDirections}</ol>
-        <ul>${coords.map(coord => `<li>${coord}</li>`).join('')}</ul>`;
+        <p>${coordinates}</p>`;
       }
 
       // Draw the Map Matching route as a new layer on the map
