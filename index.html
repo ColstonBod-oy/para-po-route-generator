@@ -192,7 +192,7 @@
           data.duration / 60
         )} min.</strong></p>
         <ol>${tripDirections}</ol>
-        <p>${data.features}</p>`;
+        <ul>${coords.map(coord => `<li>${coord}</li>`).join('')}</ul>`;
       }
 
       // Draw the Map Matching route as a new layer on the map
