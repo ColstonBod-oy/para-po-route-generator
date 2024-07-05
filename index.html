@@ -183,9 +183,9 @@
         // Format the coordinates
         const coords = coordinates.split(';').map(pair => {
           const [lng, lat] = pair.split(',').map(Number);
-          return `  [${lng}, ${lat}]`;
-        }).join(',\n');
-        const formattedCoords = `[\n${coords}\n]`;
+          return `&nbsp;&nbsp;[${lng}, ${lat}]`;
+        }).join(',<br>');
+        const formattedCoords = `[<br>${coords}<br>]`;
         let tripDirections = '';
         // Output the instructions for each step of each leg in the response object
         for (const leg of data.legs) {
